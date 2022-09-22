@@ -209,8 +209,8 @@ class DataTransformer():
         for idx in range(len(self.tafelgenoot_vorigjaar_df)):
             bewoner1 = self.tafelgenoot_vorigjaar_df['Bewoner1'][idx]
             bewoner2 = self.tafelgenoot_vorigjaar_df['Bewoner2'][idx]
-            deelnemer1_doet_mee = (self.Bewoners_df['Bewoner'] == bewoner1).any()
-            deelnemer2_doet_mee = (self.Bewoners_df['Bewoner'] == bewoner2).any()
+            deelnemer1_doet_mee = (self.bewoners_df['Bewoner'] == bewoner1).any()
+            deelnemer2_doet_mee = (self.bewoners_df['Bewoner'] == bewoner2).any()
             if deelnemer1_doet_mee and deelnemer2_doet_mee:
                 for gang in self.gangen:
                     adrs_pers_1 = self.oplossing_df[gang][self.oplossing_df['Bewoner'] == bewoner1].values[0]
