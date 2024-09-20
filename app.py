@@ -45,7 +45,7 @@ if master_data:
             st.session_state.buren_df = buren_df
             st.session_state.gang_vorigjaar_df = gang_vorigjaar_df
             st.session_state.tafelgenoot_vorigjaar_df = tafelgenoot_vorigjaar_df
-            st.success("Master data successfully validated!")
+            st.success("Master data format is as expected!")
 
 # Schedule upload and validation for the "Validate Schedule" page
 if page == "Validate Schedule":
@@ -64,7 +64,7 @@ if page == "Validate Schedule":
             else:
                 st.session_state.schedule = schedule
                 st.session_state.oplossing_df = oplossing_df
-                st.success("Schedule successfully validated!")
+                st.success("Schedule format is as expected!")
 
     # Only show button when both files are valid
     if st.session_state.master_data and st.session_state.schedule:
