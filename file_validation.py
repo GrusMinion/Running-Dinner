@@ -19,7 +19,7 @@ def validate_schedule(uploaded_file: UploadedFile) -> tuple[list[str], pd.DataFr
         return error_msgs, None
     
     data = pd.read_excel(uploaded_file)
-    format_columns = ['Unnamed: 0', 'Bewoner','Huisadres','Voor','Hoofd','Na','kookt','aantal']
+    format_columns = ['Bewoner','Huisadres','Geslacht','Voor','Hoofd','Na','kookt','aantal']
     data_columns = list(data.columns)
     
     if data_columns == format_columns:
@@ -143,7 +143,7 @@ def validate_rd_data(uploaded_file: UploadedFile) -> tuple[list[str], pd.DataFra
         return error_msgs, None, None, None, None, None, None
     
     
-    format_columns_bewoners = ['Bewoner', 'Huisadres', 'Kookt niet']
+    format_columns_bewoners = ['Bewoner', 'Huisadres', 'Kookt niet', 'Geslacht']
     bewoners_data_columns = list(bewoners_df.columns)
     format_columns_adressen = ['Huisadres', 'Min groepsgrootte', 'Max groepsgrootte','Voorkeur gang']
     adressen_data_columns = list(adressen_df.columns)
